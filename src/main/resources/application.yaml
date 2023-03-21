@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+spring:
+  banner:
+    banner.txt
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
