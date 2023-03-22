@@ -18,6 +18,9 @@ public class AdminController {
 
         return user;
     }
-
+    @GetMapping("/user/{id}")
+    public User getUserById(int id){
+        User user=
+    }
 
 }
