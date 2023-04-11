@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -19,11 +18,11 @@ public class PatronController {
     @Autowired
     PatronServiceImpl patronServiceImpl;
 
-    //需要模板引擎 不知道前端用什么
-//    @RequestMapping("/all")
-//    public String showAllPatronPage() {
-//        return "patron";
-//    }
+    //需要模板引擎 thymeleaf
+    @RequestMapping("/all")
+    public String showAllPatronPage() {
+        return "/patron/test_all";
+    }
 
     // 获取所有员工信息
     @GetMapping("/api/getAll")
