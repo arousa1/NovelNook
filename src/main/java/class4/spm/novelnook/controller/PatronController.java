@@ -1,25 +1,35 @@
 package class4.spm.novelnook.controller;
 
-import class4.spm.novelnook.mapper.PatronMapper;
+
 import class4.spm.novelnook.pojo.User;
+import class4.spm.novelnook.service.PatronServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/patron")
 public class PatronController {
 
     @Autowired
-    PatronMapper patronMapper;
+    PatronServiceImpl patronServiceImpl;
+
+    //需要模板引擎 不知道前端用什么
+//    @RequestMapping("/all")
+//    public String showAllPatronPage() {
+//        return "patron";
+//    }
 
     // 获取所有员工信息
-    @GetMapping("/getAll")
+    @GetMapping("/api/getAll")
+    @ResponseBody
     public List<User> getAllPatrons(){
-        return patronMapper.getAllPatrons();
+        return patronServiceImpl.getAllPatrons();
     }
 
 
