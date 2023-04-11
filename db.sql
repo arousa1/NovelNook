@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS user(
                                    username VARCHAR(255),
                                    password VARCHAR(255),
                                    avatarlocation VARCHAR(255),
-                                   userrole ENUM('admin,patron,staff,super user'),
+                                   userrole ENUM('admin','patron','staff','super user'),
                                    email VARCHAR(255),
                                    PHONE VARCHAR(20)
 );
