@@ -7,6 +7,16 @@ DROP TABLE IF EXISTS borrow;
 DROP TABLE IF EXISTS reservation;
 DROP TABLE IF EXISTS user;
 DROP TABLE IF EXISTS book;
+DROP TABLE IF EXISTS staff;
+CREATE  TABLE IF NOT EXISTS staff(
+  username varchar(255) PRIMARY KEY,
+  password varchar(255),
+  firstname varchar(255),
+  lastname varchar(255),
+  email varchar(255),
+  telephone varchar(255),
+  avatar varchar(255)
+);
 
 
 CREATE TABLE IF NOT EXISTS user(
@@ -114,3 +124,4 @@ INSERT IGNORE INTO borrow(userid,bookid,borrowtime,deadline,status)VALUES
 INSERT IGNORE INTO reservation(userid,bookid,reservationtime,status)VALUES
                                                                         ('007','B001','2023-03-21','satisfied'),
                                                                         ('008','B007','2023-02-21','satisfied');
+
