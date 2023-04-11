@@ -1,6 +1,27 @@
 # NovelNook
 
+## 2023.4.11
+
+数据库设计有变动,Admin组使用staff表,不再使用user表
+
+```
+staff(username,password,firstname,lastname,email,telephone,avatar)
+```
+
+Admin组在线文档@[Admin组 (qq.com)](https://docs.qq.com/doc/DZndlc3hrR1Jwd1da?u=d40a8d8e1be54004acb1a14b0d0ad35c)
+
+
+
+
+
+
+
 ## 关系数据库设计
+
+
+
+
+
 数据库名:`novelnook`
 
 共有四个表,`user,book,borrow,reservation`
