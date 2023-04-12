@@ -2,7 +2,6 @@ package class4.spm.novelnook.service;
 
 import class4.spm.novelnook.mapper.PatronMapper;
 import class4.spm.novelnook.pojo.Patron;
-import class4.spm.novelnook.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
