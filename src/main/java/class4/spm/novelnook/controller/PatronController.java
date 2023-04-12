@@ -18,11 +18,11 @@ public class PatronController {
     @Autowired
     PatronServiceImpl patronServiceImpl;
 
-    //需要模板引擎 thymeleaf
-    @RequestMapping("/all")
-    public String showAllPatronPage() {
-        return "/patron/test_all";
-    }
+    //需要模板引擎，或者自定义？？？
+//    @RequestMapping("all")
+//    public String showAllPatronPage() {
+//        return "showAll";
+//    }
 
     // 获取所有员工信息
     @GetMapping("/api/getAll")

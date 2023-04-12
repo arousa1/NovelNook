@@ -13,7 +13,7 @@ import java.util.List;
 public interface PatronMapper {
 
     // 获取所有patron信息
-    @Select("select * from user where userrole = 'patron'")
+    @Select("select * from patron")
     List<User> getAllPatrons();
 
 
