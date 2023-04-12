@@ -1,6 +1,7 @@
 package class4.spm.novelnook.service;
 
 import class4.spm.novelnook.mapper.PatronMapper;
+import class4.spm.novelnook.pojo.Patron;
 import class4.spm.novelnook.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class PatronServiceImpl implements PatronService{
     PatronMapper patronMapper;
 
     // 获取所有员工信息  具体实现
-    public List<User> getAllPatrons() {
+    public List<Patron> getAllPatrons() {
         return patronMapper.getAllPatrons();
     }
 

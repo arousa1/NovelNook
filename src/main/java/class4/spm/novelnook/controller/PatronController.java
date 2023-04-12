@@ -1,7 +1,7 @@
 package class4.spm.novelnook.controller;
 
 
-import class4.spm.novelnook.pojo.User;
+import class4.spm.novelnook.pojo.Patron;
 import class4.spm.novelnook.service.PatronServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class PatronController {
     // 获取所有员工信息
     @GetMapping("/api/getAll")
     @ResponseBody
-    public List<User> getAllPatrons(){
+    public List<Patron> getAllPatrons(){
         return patronServiceImpl.getAllPatrons();
     }
 
