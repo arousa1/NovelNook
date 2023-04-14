@@ -31,5 +31,16 @@ public class StaffServiceImpl implements StaffService {
         return staffMapper.getBookById(bookid);
     }
 
+    //根据userid删除patron具体实现
+    @Override
+    public int DeleteParton(String userid) { return  staffMapper.DeletePatron(userid); }
+
+    //增加用户具体实现
+    @Override
+    public  int AddPatron(String userid,String password,String firstname,String lastname,String email,String telephone ,String avatarUrl) {
+        return staffMapper.AddPatron(userid, password, firstname, lastname, email, telephone,avatarUrl);
+    }
+
+
 
 }

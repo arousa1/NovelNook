@@ -18,4 +18,10 @@ public interface StaffService {
     //根据bookid获取书信息
     Book getBookById(String bookid);
 
+    //根据userid删除
+    int DeleteParton(String userid);
+
+    //增加用户
+    int AddPatron (String userid,String password,String firstname,String lastname,String email,String telephone,String avatarUrl);
+
 }

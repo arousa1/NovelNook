@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Random;
 
 @RestController
 @RequestMapping("/staff")
@@ -35,7 +36,23 @@ public class StaffController {
         return staffServiceImpl.getBookById(bookid);
     }
 
+    //根据userid删除用户
+    @GetMapping("/patron/delete/{userid}")
+    public int DeletePatron(@PathVariable("userid") String userid) {
+        return staffServiceImpl.DeleteParton(userid);
+    }
 
+    int randomNum = new Random().nextInt(10) + 1;
+    // 将随机数转换为字符串，并拼接到字符串中
+    //生成随机的头像
+    String avatarUrl = "avatar/" + randomNum + ".jpg";
+    @GetMapping("/patron/add/{userid}/{password}/{firstname}/{lastname}/{email}/{telephone}")
+    public int AddPatron(@PathVariable("userid") String userid,@PathVariable("password") String password
+            ,@PathVariable("firstname" ) String firstname,@PathVariable("lastname") String lastname
+            ,@PathVariable("email") String email,@PathVariable("telephone") String telephone)
+    {
+        return staffServiceImpl.AddPatron(userid, password, firstname, lastname, email, telephone,avatarUrl);
+    }
 
 
 }
