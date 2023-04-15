@@ -7,6 +7,7 @@ import class4.spm.novelnook.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -21,13 +22,26 @@ public class AdminController {
     }
 
 
-//    @GetMapping("/staff")
-//    public Staff getStaff(){
-//    }
+    @GetMapping("/staff")
+    public List<Staff> getStaff(){//展示列表界面
+        List<Staff> list = adminMapper.ShowStaff();
+        return list;
+
+    }
     @GetMapping("/staff/{username}")
-    public List<Staff> getStaffByUsername(@PathVariable("username") String username){
+    public List<Staff> getStaffByUsername(@PathVariable("username") String username){//列表界面查找
         System.out.println(username);
         List<Staff> list=adminMapper.getStaffByUserName(username);
+//        if (list.isEmpty()){
+//            list.add(new Staff("sjh","123","Darth","Vader","123456","1@empire.com"));
+//        }
+        return list;
+    }
+
+    @DeleteMapping("/staff/{username}")
+    public List<Staff> deleteStaffByUsername(@PathVariable("username") String username){//列表界面删除
+        System.out.println(username);
+        List<Staff> list=adminMapper.deleteStaffByUserName(username);
 //        if (list.isEmpty()){
 //            list.add(new Staff("sjh","123","Darth","Vader","123456","1@empire.com"));
 //        }
