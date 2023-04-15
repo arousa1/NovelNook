@@ -26,4 +26,19 @@ public interface AdminMapper {
 
     @Delete("delete from staff where username = '%${username}%'")
     List<Staff> deleteStaffByUserName(String username);//用来删除
+    
+    /**
+     * update function at Dao level
+     * update staff table by username
+     * @param staff object staff got from service
+     * @return
+     *       if return 0, update fail
+     *       if return > 0, update success
+     */
+    @Update("update staff set password = #{password}, " +
+            "firstname = #{firstname}, lastname = #{lastname}, " +
+            "telephone = #{telephone}, email = #{email}, avatar = #{avatar}" +
+            "where username = #{username}")
+    int updateByUserName(Staff staff);
+    
 }
