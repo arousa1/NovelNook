@@ -35,4 +35,15 @@ public interface StaffMapper {
             ,@Param("firstname" ) String firstname,@Param("lastname") String lastname
             , @Param("email") String email, @Param("telephone") String telephone,@Param("avatarUrl") String avatarUrl);
 
+    //删除书
+    @Delete("DELETE FROM book WHERE bookid = #{bookid};")
+    int DeleteBook (@Param("bookid") String bookid);
+
+    //增加新书
+    @Insert("INSERT INTO book VALUES (#{bookid}, #{bookname}, #{press}, #{author}, #{publishtime}, #{catagory}, #{remain}, #{introduction});")
+    int AddNewBook(@Param("bookid") String bookid, @Param("bookname") String bookname ,
+                   @Param("press" )String press,  @Param("author") String author,
+                   @Param("publishtime") String publishtime, @Param("catagory")String catagory,
+                   @Param("remain") int remain, @Param("introduction")String introduction);
+
 }

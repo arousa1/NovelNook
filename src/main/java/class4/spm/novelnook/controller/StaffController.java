@@ -54,5 +54,21 @@ public class StaffController {
         return staffServiceImpl.AddPatron(userid, password, firstname, lastname, email, telephone,avatarUrl);
     }
 
+    //根据bookid删除书籍
+    @GetMapping("/material/delete/{bookid}")
+    public int DeleteBook(@PathVariable("bookid") String bookid){
+        return staffServiceImpl.DeleteBook(bookid);
+    }
+
+    //增加新的书籍
+    @GetMapping("/material/addNew/{bookid}/{bookname}/{press}/{author}/{publishtime}/{catagory}/{remain}/{introduction}")
+    public int AddNewBook(@PathVariable("bookid") String bookid, @PathVariable("bookname") String bookname,
+                          @PathVariable("press") String press, @PathVariable("author") String author,
+                          @PathVariable("publishtime") String publishtime, @PathVariable("catagory") String catagory,
+                          @PathVariable("remain") int remain, @PathVariable("introduction") String introduction){
+        return staffServiceImpl.AddNewBook(bookid,bookname,press,author,publishtime,catagory,remain,introduction);
+    }
+
+
 
 }

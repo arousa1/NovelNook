@@ -24,4 +24,10 @@ public interface StaffService {
     //增加用户
     int AddPatron (String userid,String password,String firstname,String lastname,String email,String telephone,String avatarUrl);
 
+    //增加新书
+    int AddNewBook (String bookid, String bookname, String press, String author, String publishtime, String catagory, int remain, String introduction);
+
+    //删书
+    int DeleteBook (String bookid);
+
 }

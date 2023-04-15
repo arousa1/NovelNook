@@ -41,6 +41,18 @@ public class StaffServiceImpl implements StaffService {
         return staffMapper.AddPatron(userid, password, firstname, lastname, email, telephone,avatarUrl);
     }
 
+    //具体实现增加新书
+    @Override
+    public int AddNewBook (String bookid, String bookname, String press ,String author ,String publishtime ,String catagory, int remain , String introduction){
+        return staffMapper.AddNewBook(bookid, bookname, press, author, publishtime, catagory, remain, introduction);
+    }
+
+    //具体实现删除书
+    @Override
+    public int DeleteBook (String bookid){
+        return staffMapper.DeleteBook(bookid);
+    }
+
 
 
 }
