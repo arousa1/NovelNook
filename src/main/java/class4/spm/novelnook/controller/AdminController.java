@@ -45,5 +45,15 @@ public class AdminController {
 //        }
         return list;
     }
+    
+    /**
+     * update function
+     * @param staff param got from json data in RequestBody
+     * @return
+     */
+    @PutMapping("/staff")
+    public int update(@RequestBody Staff staff) {
+        return adminMapper.updateByUsername(staff);
+    }
 
 }
