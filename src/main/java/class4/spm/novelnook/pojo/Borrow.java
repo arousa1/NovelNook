@@ -11,6 +11,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Borrow {
+    String borrowid;
     String userid;
     String bookid;
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -19,6 +20,10 @@ public class Borrow {
     Date   deadline;
     String status;
 
+    public void setBorrowid(String borrowid) {
+        this.borrowid = borrowid;
+    }
+
     public void setUserid(String userid) {
         this.userid = userid;
     }
@@ -26,7 +31,6 @@ public class Borrow {
     public void setBookid(String bookid) {
         this.bookid = bookid;
     }
-
 
     public void setBorrowtime(Date borrowtime) {
         this.borrowtime = borrowtime;

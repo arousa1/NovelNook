@@ -17,7 +17,8 @@ public class PatronController {
     @Autowired
     PatronServiceImpl patronServiceImpl;
 
-    @GetMapping("/book/{title}/{author}/{catagory}")
+    //搜索图书信息
+    @GetMapping("/search/book/{title}/{author}/{catagory}")
     public List<Book> searchForBook(@PathVariable("title") String title,@PathVariable("author") String author
             ,@PathVariable("catagory") String catagory){
         if (title.isEmpty())
@@ -36,22 +37,23 @@ public class PatronController {
         return list;
     }
 
-    @GetMapping("/borrow/{userid}")
+    //获取借阅记录
+    @GetMapping("/info/borrow/{userid}")
     public List<Borrow> getBorrowList(@PathVariable("userid") String userid){
         System.out.println(userid);
         return patronServiceImpl.getBorrowList(userid);
     }
 
-    @GetMapping("/book/{bookid}")
-    public List<Book> getBookMsg(@PathVariable("bookid") String bookid){
+    //获取图书信息
+    @GetMapping("/info/book/{bookid}")
+    public List<Book> getBookInfo(@PathVariable("bookid") String bookid){
         System.out.println(bookid);
-        return patronServiceImpl.getBookMsg(bookid);
+        return patronServiceImpl.getBookInfo(bookid);
     }
 
-    @GetMapping("/{userid}/{bookid}")
+    //借书
+    @GetMapping("/borrow/{userid}/{bookid}")
     public String updateBorrow(@PathVariable("userid") String userid, @PathVariable("bookid") String bookid) {
         return patronServiceImpl.updateBorrow(userid, bookid);
     }
-
-
 }

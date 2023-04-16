@@ -10,13 +10,15 @@ import java.util.List;
 @Service
 public interface PatronService {
 
+    //搜索图书
     List<Book> searchForBook(String title, String author,String catagory);
 
+    //获取借阅记录
     List<Borrow> getBorrowList(String userid);
 
-    List<Book> getBookMsg(String bookid);
+    //获取图书信息
+    List<Book> getBookInfo(String bookid);
 
-    int updateBook(String bookid);
-
+    //更新借阅信息
     String updateBorrow(String userid,String bookid);
 }
