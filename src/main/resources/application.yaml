@@ -4,8 +4,18 @@ server:
 spring:
   datasource:
     username: root
+<<<<<<< HEAD
 
     password: 1234
+=======
+    password: yefan020405
+>>>>>>> 9ee743ec0980e42635471512ad22b43a516ac032
     url: jdbc:mysql://localhost:3306/novelnook?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8
 
     driver-class-name: com.mysql.cj.jdbc.Driver
+<<<<<<< HEAD
+=======
+
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+>>>>>>> 9ee743ec0980e42635471512ad22b43a516ac032
