@@ -3,10 +3,7 @@ package class4.spm.novelnook.mapper;
 
 import class4.spm.novelnook.pojo.Staff;
 import class4.spm.novelnook.pojo.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 

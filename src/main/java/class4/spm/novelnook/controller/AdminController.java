@@ -69,7 +69,7 @@ public class AdminController {
      */
     @PutMapping("/staff")
     public int update(@RequestBody Staff staff) {
-        return adminMapper.updateByUsername(staff);
+        return adminMapper.updateByUserName(staff);
     }
 
 }

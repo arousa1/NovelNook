@@ -1,39 +1,23 @@
 package class4.spm.novelnook.pojo;
 
-<<<<<<< HEAD
-=======
+
 import com.fasterxml.jackson.annotation.JsonFormat;
->>>>>>> 9ee743ec0980e42635471512ad22b43a516ac032
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-<<<<<<< HEAD
-import java.sql.Date;
-
-=======
 import java.util.Date;
->>>>>>> 9ee743ec0980e42635471512ad22b43a516ac032
+//import java.util.Date;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Borrow {
-<<<<<<< HEAD
 
     String userid;
     String bookid;
-    Date borrowtime;
-    Date deadline;
-    String status;
 
-
-}
-
-=======
     String borrowid;
-    String userid;
-    String bookid;
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     Date   borrowtime;
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -64,4 +48,3 @@ public class Borrow {
         this.status = status;
     }
 }
->>>>>>> 9ee743ec0980e42635471512ad22b43a516ac032
