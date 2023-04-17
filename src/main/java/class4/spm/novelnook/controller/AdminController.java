@@ -4,6 +4,8 @@ import class4.spm.novelnook.mapper.AdminMapper;
 import class4.spm.novelnook.pojo.Staff;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.GetExchange;
+import tool.R;
 
 import java.util.Collection;
 import java.util.List;
@@ -21,29 +23,43 @@ public class AdminController {
 
 
     @GetMapping("/staff")
-    public List<Staff> getStaff(){//展示列表界面
+    public R<List<Staff>> getStaff(){//展示列表界面
         List<Staff> list = adminMapper.ShowStaff();
-        return list;
+        return R.success(list);
 
     }
+//    @GetMapping("/staff/{username}")
+//    public List<Staff> getStaffByUsername(@PathVariable("username") String username){//列表界面查找
+//        System.out.println(username);
+//        List<Staff> list=adminMapper.getStaffByUserName(username);
+//        if (list.isEmpty()) {
+//            list.add(new Staff("can't", "find", "this", "User", " ", " "," "));
+//        }
+//        return list;
+//    }
+
     @GetMapping("/staff/{username}")
-    public List<Staff> getStaffByUsername(@PathVariable("username") String username){//列表界面查找
+    public R<List<Staff>>  getStaffByUsername(@PathVariable("username") String username){//列表界面查找
         System.out.println(username);
         List<Staff> list=adminMapper.getStaffByUserName(username);
-//        if (list.isEmpty()){
-//            list.add(new Staff("sjh","123","Darth","Vader","123456","1@empire.com"));
-//        }
-        return list;
+//        R<Staff> r = (R<Staff>) list;
+        if (list.isEmpty()) {
+            return R.error("查无此人");
+        }
+        return R.success(list);
+//        r.success(list);
+//        return r.success(list);
     }
 
     @DeleteMapping("/staff/{username}")
-    public List<Staff> deleteStaffByUsername(@PathVariable("username") String username){//列表界面删除
+    public R<List<Staff>> deleteStaffByUsername(@PathVariable("username") String username){//列表界面删除
         System.out.println(username);
-        List<Staff> list=adminMapper.deleteStaffByUserName(username);
-//        if (list.isEmpty()){
-//            list.add(new Staff("sjh","123","Darth","Vader","123456","1@empire.com"));
-//        }
-        return list;
+        List<Staff> l  = adminMapper.getStaffByUserName(username);
+        List<Staff> list = adminMapper.deleteStaffByUserName(username);
+        if (l == null) {
+            return R.error("删除失败");
+        }
+        else return R.success(list);
     }
     
     /**
