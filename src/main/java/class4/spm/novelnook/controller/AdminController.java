@@ -77,6 +77,7 @@ public class AdminController {
         }
 
         return R.error("update fail");
+
     }
 
 }
