@@ -68,8 +68,15 @@ public class AdminController {
      * @return
      */
     @PutMapping("/staff")
-    public int update(@RequestBody Staff staff) {
-        return adminMapper.updateByUsername(staff);
+    public R update(@RequestBody Staff staff) {
+        //flag is used to judge whether operation is success
+        int flag = adminMapper.updateByUserName(staff);
+
+        if(flag > 0) {
+            return R.success(null);
+        }
+
+        return R.error("update fail");
     }
 
 }
