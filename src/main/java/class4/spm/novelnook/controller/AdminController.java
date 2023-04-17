@@ -1,9 +1,7 @@
 package class4.spm.novelnook.controller;
 
 import class4.spm.novelnook.mapper.AdminMapper;
-import class4.spm.novelnook.mapper.PatronMapper;
 import class4.spm.novelnook.pojo.Staff;
-import class4.spm.novelnook.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.service.annotation.GetExchange;
